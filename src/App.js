@@ -3,6 +3,7 @@ import './App.css';
 import AppImage1 from './images/appimage1.jpg'
 import AppImage2 from './images/appimage2.jpg'
 import AppImage3 from './images/appimage3.jpg'
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
@@ -19,6 +20,12 @@ function App() {
         <button disabled={true} className="contact-button" onClick={() => window.location = 'mailto:Harveymackie@outlook.com'}>
           Download (Coming soon)
         </button>
+        <Link to="/privacy">
+          <button className="contact-button">
+            View Privacy Policy
+          </button>
+        </Link>
+
       </header>
 
       <section className="features">
