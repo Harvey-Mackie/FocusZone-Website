@@ -30,12 +30,6 @@ function App() {
 
         <h2>Changes to This Privacy Policy</h2>
         <p>We may update this Privacy Policy to reflect changes in the app or legal requirements. Any updates will be made available within the app or on our website, along with the effective date of the changes.</p>
-
-        <h2>Contact Us</h2>
-        <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
-        <p>Email: <a href="mailto:support@focuszoneapp.com">support@focuszoneapp.com</a></p>
-
-        <p>Thank you for trusting FocusZone to support your productivity journey.</p>
       </header>
 
       <footer>
