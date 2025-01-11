@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import Privacy from './Privacy';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       <Routes>
         <Route path='/' element={<App />} />
         <Route path='/FocusZone-Website' element={<App />} />
-        <Route path='/privacy' element={<Privacy />} />
+        <Route path='/FocusZone-Website/privacy' element={<Privacy />} />
       </Routes>
     </Router>
   </React.StrictMode>

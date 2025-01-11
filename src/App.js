@@ -20,7 +20,7 @@ function App() {
         <button disabled={true} className="contact-button" onClick={() => window.location = 'mailto:Harveymackie@outlook.com'}>
           Download (Coming soon)
         </button>
-        <Link to="/privacy">
+        <Link to="/FocusZone-Website/privacy">
           <button className="contact-button">
             View Privacy Policy
           </button>
