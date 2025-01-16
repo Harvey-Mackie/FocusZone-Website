@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       <Routes>
         <Route path='/' element={<App />} />
         <Route path='/FocusZone-Website' element={<App />} />
-        <Route path='/FocusZone-Website/privacy' element={<Privacy />} />
+        <Route path='/privacy' element={<Privacy />} />
       </Routes>
     </Router>
   </React.StrictMode>
