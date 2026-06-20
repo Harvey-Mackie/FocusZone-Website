@@ -30,18 +30,29 @@ function App() {
           <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
           <a href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
           <Link to="/privacy" onClick={() => setMobileMenuOpen(false)}>Privacy</Link>
+          <a
+            href="https://apps.apple.com/app/zenzone"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-cta"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Download
+          </a>
         </div>
       </nav>
 
       {/* Hero Section */}
       <header className="hero" role="banner">
-        <div className="hero-badge">✨ Now on the App Store</div>
+        <div className="hero-announcement">
+          <span>Now on the App Store</span>
+          <span style={{ color: 'var(--color-slate)' }}>→</span>
+          <a href="https://apps.apple.com/app/zenzone" target="_blank" rel="noopener noreferrer">Get it today</a>
+        </div>
         <h1 className="hero-title">
-          <span className="hero-emoji" aria-hidden="true">🧘</span>
-          <br />
           Find Focus with ZenZone
         </h1>
-        <h2 className="tagline">Reduce screen time. Build mindful routines. Reclaim your day.</h2>
+        <p className="tagline">Reduce screen time. Build mindful routines. Reclaim your day.</p>
         <p className="hero-description">
           ZenZone is a minimalistic iOS productivity app designed to help you reduce distractions,
           enhance concentration, and achieve mindfulness through structured routines, screen time
@@ -49,7 +60,7 @@ function App() {
         </p>
         <div className="hero-buttons">
           <a
-            className="app-store-button"
+            className="btn-primary"
             href="https://apps.apple.com/app/zenzone"
             target="_blank"
             rel="noopener noreferrer"
@@ -60,13 +71,20 @@ function App() {
             </svg>
             Download on the App Store
           </a>
-          <span className="coming-soon-badge">Coming soon</span>
+          <span className="hero-subnote">Free to download. Premium features available.</span>
         </div>
       </header>
 
+      {/* Product Screenshot */}
+      <section className="section" aria-label="Product preview">
+        <div className="product-card">
+          <img src={AppImage1} alt="ZenZone app dashboard showing screen time metrics and focus routines" loading="eager" />
+        </div>
+      </section>
+
       {/* Features Section */}
       <section id="features" className="features" aria-labelledby="features-heading">
-        <h2 id="features-heading">Features</h2>
+        <h2 id="features-heading" className="section-heading">Features</h2>
         <p className="section-subtitle">Everything you need to stay focused and productive.</p>
         <div className="features-grid">
           <div className="feature-card">
@@ -104,17 +122,24 @@ function App() {
 
       {/* Screenshots Section */}
       <section className="screenshots" aria-labelledby="screenshots-heading">
-        <h2 id="screenshots-heading">See ZenZone in Action</h2>
+        <h2 id="screenshots-heading" className="section-heading">See ZenZone in Action</h2>
+        <p className="section-subtitle">A clean, focused interface designed for deep work.</p>
         <div className="screenshots-grid">
-          <img src={AppImage1} alt="ZenZone app screenshot showing the main dashboard with screen time metrics" loading="lazy" />
-          <img src={AppImage2} alt="ZenZone app screenshot showing routine scheduling and app blocking settings" loading="lazy" />
-          <img src={AppImage3} alt="ZenZone app screenshot showing deep work session timer and progress" loading="lazy" />
+          <div className="screenshot-card">
+            <img src={AppImage1} alt="ZenZone app screenshot showing the main dashboard with screen time metrics" loading="lazy" />
+          </div>
+          <div className="screenshot-card">
+            <img src={AppImage2} alt="ZenZone app screenshot showing routine scheduling and app blocking settings" loading="lazy" />
+          </div>
+          <div className="screenshot-card">
+            <img src={AppImage3} alt="ZenZone app screenshot showing deep work session timer and progress" loading="lazy" />
+          </div>
         </div>
       </section>
 
       {/* How It Works Section */}
       <section id="how-it-works" className="how-it-works" aria-labelledby="how-it-works-heading">
-        <h2 id="how-it-works-heading">How It Works</h2>
+        <h2 id="how-it-works-heading" className="section-heading">How It Works</h2>
         <p className="section-subtitle">Get started in three simple steps.</p>
         <div className="steps">
           <div className="step">
@@ -137,7 +162,7 @@ function App() {
 
       {/* Testimonials Section */}
       <section className="testimonials" aria-labelledby="testimonials-heading">
-        <h2 id="testimonials-heading">What Users Say</h2>
+        <h2 id="testimonials-heading" className="section-heading">What Users Say</h2>
         <p className="section-subtitle">Join thousands who have transformed their productivity.</p>
         <div className="testimonials-grid">
           <blockquote className="testimonial">
@@ -157,7 +182,7 @@ function App() {
 
       {/* Pricing Section */}
       <section id="pricing" className="pricing" aria-labelledby="pricing-heading">
-        <h2 id="pricing-heading">Pricing</h2>
+        <h2 id="pricing-heading" className="section-heading">Pricing</h2>
         <p className="section-subtitle">Start free. Upgrade when you are ready.</p>
         <div className="pricing-grid">
           <div className="pricing-card">
@@ -187,7 +212,7 @@ function App() {
 
       {/* FAQ Section */}
       <section id="faq" className="faq" aria-labelledby="faq-heading">
-        <h2 id="faq-heading">Frequently Asked Questions</h2>
+        <h2 id="faq-heading" className="section-heading" style={{ textAlign: 'center' }}>Frequently Asked Questions</h2>
         <div className="faq-list">
           <details className="faq-item">
             <summary>Is ZenZone free to use?</summary>
