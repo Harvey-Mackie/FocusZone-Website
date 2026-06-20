@@ -1,10 +1,10 @@
-# FocusZone-Website
+# ZenZone Website
 
 ![React](https://img.shields.io/badge/React-18.3.1-blue) ![Deployed on GitHub Pages](https://img.shields.io/badge/deployed-GitHub%20Pages-brightgreen)
 
 ## Overview
 
-Marketing landing pages for iOS apps have no default home — developers need to build and host one to publish to the App Store. FocusZone-Website is a React single-page application that serves as the public landing page for the FocusZone iOS productivity app, showcasing features, app mockups, and a privacy policy. It is intended for prospective FocusZone users and Apple's App Store review team.
+Marketing landing pages for iOS apps have no default home — developers need to build and host one to publish to the App Store. ZenZone-Website is a React single-page application that serves as the public landing page for the ZenZone iOS productivity app, showcasing features, app mockups, and a privacy policy. It is intended for prospective ZenZone users and Apple's App Store review team.
 
 ## Getting Started
 

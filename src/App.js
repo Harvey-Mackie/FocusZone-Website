@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import AppImage1 from './images/appimage1.jpg';
 import AppImage2 from './images/appimage2.jpg';
@@ -6,6 +6,8 @@ import AppImage3 from './images/appimage3.jpg';
 import { Link } from 'react-router-dom';
 
 function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="app">
       {/* Navigation */}
@@ -14,25 +16,34 @@ function App() {
           <span className="nav-logo" aria-hidden="true">🧘</span>
           <span className="nav-title">ZenZone</span>
         </div>
-        <div className="nav-links">
-          <a href="#features">Features</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
-          <Link to="/privacy">Privacy</Link>
+        <button
+          className="mobile-menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded={mobileMenuOpen}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          ☰
+        </button>
+        <div className={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
+          <a href="#features" onClick={() => setMobileMenuOpen(false)}>Features</a>
+          <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>How It Works</a>
+          <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
+          <a href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
+          <Link to="/privacy" onClick={() => setMobileMenuOpen(false)}>Privacy</Link>
         </div>
       </nav>
 
       {/* Hero Section */}
       <header className="hero" role="banner">
+        <div className="hero-badge">✨ Now on the App Store</div>
         <h1 className="hero-title">
           <span className="hero-emoji" aria-hidden="true">🧘</span>
           <br />
-          Welcome to ZenZone
+          Find Focus with ZenZone
         </h1>
-        <h2 className="tagline">Find focus in a distracted world</h2>
+        <h2 className="tagline">Reduce screen time. Build mindful routines. Reclaim your day.</h2>
         <p className="hero-description">
-          ZenZone is a minimalistic productivity app designed to help you reduce distractions,
+          ZenZone is a minimalistic iOS productivity app designed to help you reduce distractions,
           enhance concentration, and achieve mindfulness through structured routines, screen time
           management, and personalized insights.
         </p>
@@ -44,7 +55,9 @@ function App() {
             rel="noopener noreferrer"
             aria-label="Download ZenZone on the App Store"
           >
-            <span className="app-store-icon" aria-hidden="true">📱</span>
+            <svg className="app-store-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.5 1.3-.02 2.52.87 3.31.87.79 0 2.27-1.08 3.83-.92.65.03 2.48.26 3.65 1.98-.09.06-2.18 1.28-2.16 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.22-1.97 1.08-3.11-1.05.05-2.31.7-3.06 1.53-.67.74-1.26 1.93-1.1 3.1 1.17.09 2.36-.66 3.08-1.52z"/>
+            </svg>
             Download on the App Store
           </a>
           <span className="coming-soon-badge">Coming soon</span>
@@ -54,6 +67,7 @@ function App() {
       {/* Features Section */}
       <section id="features" className="features" aria-labelledby="features-heading">
         <h2 id="features-heading">Features</h2>
+        <p className="section-subtitle">Everything you need to stay focused and productive.</p>
         <div className="features-grid">
           <div className="feature-card">
             <div className="feature-icon" aria-hidden="true">📊</div>
@@ -75,6 +89,16 @@ function App() {
             <h3>Mindful Breaks</h3>
             <p>Guided break reminders to keep you refreshed and prevent burnout.</p>
           </div>
+          <div className="feature-card">
+            <div className="feature-icon" aria-hidden="true">🛡️</div>
+            <h3>App Blocking</h3>
+            <p>Choose which apps to block during focus sessions. You are always in control.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon" aria-hidden="true">📈</div>
+            <h3>Progress Tracking</h3>
+            <p>Visualize your focus streaks and screen time trends over weeks and months.</p>
+          </div>
         </div>
       </section>
 
@@ -91,6 +115,7 @@ function App() {
       {/* How It Works Section */}
       <section id="how-it-works" className="how-it-works" aria-labelledby="how-it-works-heading">
         <h2 id="how-it-works-heading">How It Works</h2>
+        <p className="section-subtitle">Get started in three simple steps.</p>
         <div className="steps">
           <div className="step">
             <div className="step-number" aria-hidden="true">1</div>
@@ -113,6 +138,7 @@ function App() {
       {/* Testimonials Section */}
       <section className="testimonials" aria-labelledby="testimonials-heading">
         <h2 id="testimonials-heading">What Users Say</h2>
+        <p className="section-subtitle">Join thousands who have transformed their productivity.</p>
         <div className="testimonials-grid">
           <blockquote className="testimonial">
             <p>"ZenZone helped me cut my screen time in half. I finally feel in control of my day."</p>
@@ -132,6 +158,7 @@ function App() {
       {/* Pricing Section */}
       <section id="pricing" className="pricing" aria-labelledby="pricing-heading">
         <h2 id="pricing-heading">Pricing</h2>
+        <p className="section-subtitle">Start free. Upgrade when you are ready.</p>
         <div className="pricing-grid">
           <div className="pricing-card">
             <h3>Free</h3>
