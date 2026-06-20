@@ -1,7 +1,7 @@
 {
   "homepage": "https://harvey-mackie.github.io/FocusZone-Website/",
-  "name": "focuszone-website",
-  "version": "0.1.0",
+  "name": "zenzone-website",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -17,7 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts ejecto",
+    "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
