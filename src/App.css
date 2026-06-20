@@ -635,3 +635,139 @@ body {
     font-size: 0.9rem;
   }
 }
+
+/* App Store badge link */
+.app-store-link {
+  display: inline-block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.app-store-link:hover,
+.app-store-link:focus {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.app-store-badge {
+  height: 52px;
+  width: auto;
+}
+
+/* Hero mockup screenshots */
+.hero-mockups {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-lg);
+}
+
+.mockup-img {
+  width: 180px;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.mockup-img:hover {
+  transform: translateY(-4px);
+}
+
+/* Section title */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: var(--space-md);
+}
+
+/* Pricing subtitle and note */
+.pricing-subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+  font-size: 1.05rem;
+}
+
+.pricing-note {
+  margin-top: var(--space-lg);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* Pricing features list with checkmarks */
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-md);
+  text-align: left;
+}
+
+.pricing-features li {
+  padding: 0.5rem 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--color-surface-light);
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+.pricing-features li::before {
+  content: "✓";
+  color: var(--color-success);
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+
+/* Pricing action buttons */
+.pricing-button {
+  display: inline-block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  border: 1px solid var(--color-surface-light);
+  color: var(--color-text);
+  background: var(--color-surface-light);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.pricing-button:hover,
+.pricing-button:focus {
+  background: var(--color-surface);
+  border-color: var(--color-accent);
+}
+
+.pricing-button-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.pricing-button-primary:hover,
+.pricing-button-primary:focus {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+}
+
+/* Footer logo */
+.footer-logo {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-mockups {
+    gap: var(--space-sm);
+  }
+
+  .mockup-img {
+    width: 120px;
+  }
+}
