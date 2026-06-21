@@ -1,12 +1,24 @@
 import React from 'react';
+import './App.css';
+import { Link } from 'react-router-dom';
 
 function Privacy() {
   return (
     <div className="app">
-      <header>
-        <h1>🧘</h1>
-        <h1>ZenZone — Privacy Policy</h1>
-        <h2 className="tagline">Your focus, your data, your control</h2>
+      <nav className="navbar" aria-label="Main navigation">
+        <Link to="/" className="nav-brand">
+          <span className="nav-logo" aria-hidden="true">🧘</span>
+          <span className="nav-title">ZenZone</span>
+        </Link>
+        <div className="nav-links">
+          <Link to="/" className="nav-link">Home</Link>
+        </div>
+      </nav>
+
+      <div className="privacy-page">
+        <h1>Privacy Policy</h1>
+        <p className="tagline" style={{ marginBottom: '32px', color: 'var(--text-secondary)' }}>Your focus, your data, your control</p>
+
         <p>Thank you for using <strong>ZenZone</strong>. Your privacy is important to us. This Privacy Policy explains how we handle your data and your rights regarding it.</p>
 
         <h2>Data Collection and Storage</h2>
@@ -29,10 +41,16 @@ function Privacy() {
 
         <h2>Changes to This Privacy Policy</h2>
         <p>We may update this Privacy Policy to reflect changes in the app or legal requirements. Any updates will be made available within the app or on our website, along with the effective date of the changes.</p>
-      </header>
 
-      <footer className="privacy-footer">
-        <a className="contact-button" href="mailto:Harveymackie@outlook.com">Contact Us</a>
+        <div className="privacy-footer">
+          <a className="contact-button" href="mailto:Harveymackie@outlook.com">Contact Us</a>
+        </div>
+      </div>
+
+      <footer className="site-footer" style={{ marginTop: '64px' }}>
+        <div className="footer-bottom">
+          <p>© {new Date().getFullYear()} ZenZone. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );
