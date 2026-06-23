@@ -35,7 +35,7 @@ function App() {
 
       {/* Hero Section */}
       <header className="hero" role="banner">
-        <div className="hero-badge">✨ Now on the App Store</div>
+        <div className="hero-badge">✨ Coming soon to the App Store</div>
         <h1 className="hero-title">
           <span className="hero-emoji" aria-hidden="true">🧘</span>
           <br />
@@ -48,6 +48,8 @@ function App() {
           management, and personalized insights.
         </p>
         <div className="hero-buttons">
+          {/* TODO(ZZ-033): Replace mailto with real App Store link once app is live.
+               App Store URL format: https://apps.apple.com/app/zenzone/id<APP_STORE_ID> */}
           <a
             className="app-store-button"
             href="mailto:Harveymackie@outlook.com?subject=ZenZone%20App%20-%20Notify%20Me%20on%20Launch"
@@ -58,7 +60,6 @@ function App() {
             </svg>
             Get Notified on Launch
           </a>
-          <span className="coming-soon-badge">Coming soon to App Store</span>
         </div>
       </header>
 
