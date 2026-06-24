@@ -1,0 +1,67 @@
+import React from 'react';
+
+function Terms() {
+  return (
+    <div className="app">
+      <header>
+        <h1>🧘</h1>
+        <h1>ZenZone — Terms of Use</h1>
+        <h2 className="tagline">Your focus, your data, your control</h2>
+        <p><strong>Last updated:</strong> June 21, 2026</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By downloading, installing, or using ZenZone ("the App"), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the App.</p>
+
+        <h2>2. Description of Service</h2>
+        <p>ZenZone is a screen-time management and focus application that helps users build routines, block distracting apps, and track device usage through Apple's Screen Time and Family Controls APIs.</p>
+
+        <h2>3. Eligibility</h2>
+        <p>You must be at least 13 years old to use ZenZone. By using the App, you represent and warrant that you meet this age requirement.</p>
+
+        <h2>4. License</h2>
+        <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for your personal, non-commercial purposes, subject to these Terms.</p>
+
+        <h2>5. User Responsibilities</h2>
+        <p>You agree to:</p>
+        <ul>
+          <li>Use the App in compliance with all applicable laws and regulations</li>
+          <li>Not attempt to reverse-engineer, decompile, or disassemble the App</li>
+          <li>Not use the App to interfere with or disrupt any other user's device or data</li>
+          <li>Maintain the security of your device and Apple ID credentials</li>
+        </ul>
+
+        <h2>6. Screen Time and Family Controls</h2>
+        <p>ZenZone requires authorization to use Apple's Screen Time and Family Controls frameworks. You acknowledge that:</p>
+        <ul>
+          <li>The App cannot function without these permissions</li>
+          <li>Blocking functionality is dependent on Apple's APIs and may be subject to system limitations</li>
+          <li>You are responsible for any consequences arising from blocked or restricted app access</li>
+        </ul>
+
+        <h2>7. Subscriptions and Payments</h2>
+        <p>ZenZone may offer premium features via in-app purchases or subscriptions. All payments are processed through Apple's App Store and are subject to Apple's terms and policies. Subscription management and cancellation must be handled through your Apple ID settings.</p>
+
+        <h2>8. Disclaimer of Warranties</h2>
+        <p>The App is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that the App will be uninterrupted, secure, or error-free.</p>
+
+        <h2>9. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or relating to your use of the App.</p>
+
+        <h2>10. Changes to Terms</h2>
+        <p>We may modify these Terms at any time. Continued use of the App after changes constitutes acceptance of the revised Terms.</p>
+
+        <h2>11. Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which the App developer is based, without regard to conflict of law principles.</p>
+
+        <h2>12. Contact Us</h2>
+        <p>If you have any questions about these Terms, please contact us at <a href="mailto:support@zenzone.app">support@zenzone.app</a>.</p>
+      </header>
+
+      <footer className="privacy-footer">
+        <a className="contact-button" href="mailto:support@zenzone.app">Contact Us</a>
+      </footer>
+    </div>
+  );
+}
+
+export default Terms;

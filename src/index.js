@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Privacy from './Privacy';
+import Terms from './Terms';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -15,6 +16,7 @@ root.render(
         <Route path='/' element={<App />} />
         <Route path='/FocusZone-Website' element={<App />} />
         <Route path='/privacy' element={<Privacy />} />
+        <Route path='/terms' element={<Terms />} />
       </Routes>
     </Router>
   </React.StrictMode>

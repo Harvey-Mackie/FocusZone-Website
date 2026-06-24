@@ -30,6 +30,7 @@ function App() {
           <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
           <a href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
           <Link to="/privacy" onClick={() => setMobileMenuOpen(false)}>Privacy</Link>
+          <Link to="/terms" onClick={() => setMobileMenuOpen(false)}>Terms</Link>
         </div>
       </nav>
 
@@ -224,6 +225,7 @@ function App() {
             <a href="#pricing">Pricing</a>
             <a href="#faq">FAQ</a>
             <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms of Use</Link>
             <a href="mailto:Harveymackie@outlook.com">Contact</a>
           </div>
           <div className="footer-social" aria-label="Social links">
