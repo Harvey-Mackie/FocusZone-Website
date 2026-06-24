@@ -10,6 +10,7 @@ function App() {
 
   return (
     <div className="app">
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       {/* Navigation */}
       <nav className="navbar" aria-label="Main navigation">
         <div className="nav-brand">
@@ -35,7 +36,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <header className="hero" role="banner">
+      <header className="hero" role="banner" id="main-content">
         <div className="hero-badge">✨ Coming soon to the App Store</div>
         <h1 className="hero-title">
           <span className="hero-emoji" aria-hidden="true">🧘</span>
@@ -169,6 +170,13 @@ function App() {
               <li>Basic app blocking</li>
               <li>Daily insights</li>
             </ul>
+            <a
+              className="pricing-cta"
+              href="mailto:Harveymackie@outlook.com?subject=ZenZone%20App%20-%20Notify%20Me%20on%20Launch"
+              aria-label="Get notified when ZenZone launches on the App Store"
+            >
+              Get Notified on Launch
+            </a>
           </div>
           <div className="pricing-card pricing-highlight">
             <div className="pricing-badge">Most Popular</div>
@@ -181,6 +189,13 @@ function App() {
               <li>Custom break reminders</li>
               <li>Priority support</li>
             </ul>
+            <a
+              className="pricing-cta pricing-cta-primary"
+              href="mailto:Harveymackie@outlook.com?subject=ZenZone%20App%20-%20Notify%20Me%20on%20Launch"
+              aria-label="Get notified when ZenZone Premium is available"
+            >
+              Get Notified on Launch
+            </a>
           </div>
         </div>
       </section>

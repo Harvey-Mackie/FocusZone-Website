@@ -42,6 +42,37 @@ body {
   padding: 0 var(--space-sm);
 }
 
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 var(--radius-sm) 0;
+  z-index: 100;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus indicators */
+a:focus-visible,
+button:focus-visible,
+.nav-links a:focus-visible,
+.footer-links a:focus-visible,
+.pricing-cta:focus-visible,
+.app-store-button:focus-visible,
+.mobile-menu-toggle:focus-visible,
+.faq-item summary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 /* Navbar */
 .navbar {
   display: flex;
@@ -436,6 +467,33 @@ body {
 
 .pricing-card li:last-child {
   border-bottom: none;
+}
+
+.pricing-cta {
+  display: inline-block;
+  margin-top: var(--space-md);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-light);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.pricing-cta:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  transform: translateY(-2px);
+}
+
+.pricing-cta-primary {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.pricing-cta-primary:hover {
+  background: var(--color-accent-warm);
 }
 
 /* FAQ */
