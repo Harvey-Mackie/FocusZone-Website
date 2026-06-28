@@ -169,6 +169,13 @@ function App() {
               <li>Basic app blocking</li>
               <li>Daily insights</li>
             </ul>
+            <a
+              className="pricing-cta"
+              href="mailto:Harveymackie@outlook.com?subject=ZenZone%20App%20-%20Notify%20Me%20on%20Launch"
+              aria-label="Get notified when ZenZone launches on the App Store"
+            >
+              Download Free
+            </a>
           </div>
           <div className="pricing-card pricing-highlight">
             <div className="pricing-badge">Most Popular</div>
@@ -181,6 +188,13 @@ function App() {
               <li>Custom break reminders</li>
               <li>Priority support</li>
             </ul>
+            <a
+              className="pricing-cta pricing-cta-primary"
+              href="mailto:Harveymackie@outlook.com?subject=ZenZone%20App%20-%20Notify%20Me%20on%20Launch"
+              aria-label="Get notified when ZenZone Premium launches on the App Store"
+            >
+              Go Premium
+            </a>
           </div>
         </div>
       </section>
