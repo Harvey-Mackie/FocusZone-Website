@@ -36,7 +36,7 @@ function App() {
 
       {/* Hero Section */}
       <header className="hero" role="banner">
-        <div className="hero-badge">✨ Coming soon to the App Store</div>
+        <div className="hero-badge">✨ Now Available on the App Store</div>
         <h1 className="hero-title">
           <span className="hero-emoji" aria-hidden="true">🧘</span>
           <br />
@@ -49,17 +49,17 @@ function App() {
           management, and personalized insights.
         </p>
         <div className="hero-buttons">
-          {/* TODO(ZZ-033): Replace mailto with real App Store link once app is live.
-               App Store URL format: https://apps.apple.com/app/zenzone/id<APP_STORE_ID> */}
           <a
             className="app-store-button"
-            href="mailto:Harveymackie@outlook.com?subject=ZenZone%20App%20-%20Notify%20Me%20on%20Launch"
-            aria-label="Get notified when ZenZone launches on the App Store"
+            href="https://apps.apple.com/app/zenzone"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download ZenZone on the App Store"
           >
             <svg className="app-store-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.5 1.3-.02 2.52.87 3.31.87.79 0 2.27-1.08 3.83-.92.65.03 2.48.26 3.65 1.98-.09.06-2.18 1.28-2.16 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.22-1.97 1.08-3.11-1.05.05-2.31.7-3.06 1.53-.67.74-1.26 1.93-1.1 3.1 1.17.09 2.36-.66 3.08-1.52z"/>
             </svg>
-            Get Notified on Launch
+            Download on the App Store
           </a>
         </div>
       </header>
@@ -171,8 +171,10 @@ function App() {
             </ul>
             <a
               className="pricing-cta"
-              href="mailto:Harveymackie@outlook.com?subject=ZenZone%20App%20-%20Notify%20Me%20on%20Launch"
-              aria-label="Get notified when ZenZone launches on the App Store"
+              href="https://apps.apple.com/app/zenzone"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download ZenZone Free on the App Store"
             >
               Download Free
             </a>
@@ -190,8 +192,10 @@ function App() {
             </ul>
             <a
               className="pricing-cta pricing-cta-primary"
-              href="mailto:Harveymackie@outlook.com?subject=ZenZone%20App%20-%20Notify%20Me%20on%20Launch"
-              aria-label="Get notified when ZenZone Premium launches on the App Store"
+              href="https://apps.apple.com/app/zenzone"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download ZenZone Premium on the App Store"
             >
               Go Premium
             </a>
