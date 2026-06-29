@@ -10,6 +10,11 @@ function App() {
 
   return (
     <div className="app">
+      {/* Skip to main content link for accessibility */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+
       {/* Navigation */}
       <nav className="navbar" aria-label="Main navigation">
         <div className="nav-brand">
@@ -33,6 +38,9 @@ function App() {
           <Link to="/terms" onClick={() => setMobileMenuOpen(false)}>Terms</Link>
         </div>
       </nav>
+
+      {/* Main content */}
+      <main id="main-content">
 
       {/* Hero Section */}
       <header className="hero" role="banner">
@@ -225,6 +233,8 @@ function App() {
           </details>
         </div>
       </section>
+
+      </main>
 
       {/* Footer */}
       <footer className="site-footer">
