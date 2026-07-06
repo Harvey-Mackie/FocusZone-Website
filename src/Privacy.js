@@ -32,7 +32,7 @@ function Privacy() {
       </header>
 
       <footer className="privacy-footer">
-        <a className="contact-button" href="mailto:Harveymackie@outlook.com">Contact Us</a>
+        <a className="contact-button" href="mailto:support@zenzone.app">Contact Us</a>
       </footer>
     </div>
   );
