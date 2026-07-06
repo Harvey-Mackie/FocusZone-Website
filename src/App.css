@@ -495,6 +495,13 @@ body {
   border: 1px solid var(--color-surface-light);
   border-radius: var(--radius-sm);
   padding: var(--space-sm) var(--space-md);
+  display: grid;
+  grid-template-rows: auto 0fr;
+  transition: grid-template-rows 0.35s ease, background 0.2s;
+}
+
+.faq-item[open] {
+  grid-template-rows: auto 1fr;
 }
 
 .faq-item summary {
@@ -514,17 +521,23 @@ body {
   content: '+';
   font-size: 1.25rem;
   color: var(--color-accent);
-  transition: transform 0.2s;
+  transition: transform 0.3s ease;
 }
 
 .faq-item[open] summary::after {
   content: '−';
+  transform: rotate(180deg);
 }
 
-.faq-item p {
+.faq-item > :not(summary) {
   margin: var(--space-sm) 0 0;
   color: var(--color-text-muted);
   line-height: 1.6;
+  overflow: hidden;
+}
+
+.faq-item[open] > :not(summary) {
+  margin-top: var(--space-sm);
 }
 
 /* Footer */
