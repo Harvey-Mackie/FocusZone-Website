@@ -721,3 +721,83 @@ summary:focus-visible,
     font-size: 0.9rem;
   }
 }
+
+/* Print styles for legal pages */
+@media print {
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .app {
+    max-width: 100%;
+    padding: 0;
+    text-align: left;
+  }
+
+  .navbar,
+  .hero,
+  .features,
+  .screenshots,
+  .how-it-works,
+  .testimonials,
+  .pricing,
+  .faq,
+  .site-footer,
+  .mobile-menu-toggle,
+  .skip-link {
+    display: none;
+  }
+
+  .app header,
+  .app main,
+  .app .privacy-footer {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .app h1,
+  .app h2,
+  .app h3,
+  .app p,
+  .app li,
+  .app a {
+    color: #000000;
+  }
+
+  .app a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85rem;
+    color: #333333;
+    word-break: break-all;
+  }
+
+  .app a[href^="mailto:"]::after {
+    content: " (" attr(href) ")";
+  }
+
+  .privacy-footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #cccccc;
+  }
+
+  .contact-button {
+    background: transparent;
+    color: #000000;
+    padding: 0;
+    border: none;
+    text-decoration: underline;
+  }
+
+  .hero-emoji,
+  .feature-icon,
+  .nav-logo,
+  .footer-logo,
+  .footer-social,
+  .pricing-badge,
+  .step-number {
+    display: none;
+  }
+}
