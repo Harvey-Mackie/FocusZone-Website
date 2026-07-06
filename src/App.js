@@ -4,6 +4,7 @@ import AppImage1 from './images/appimage1.jpg';
 import AppImage2 from './images/appimage2.jpg';
 import AppImage3 from './images/appimage3.jpg';
 import { Link } from 'react-router-dom';
+import { APP_STORE_LIVE, STORE_CTA_URL } from './config';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,17 +26,18 @@ function App() {
           className="mobile-menu-toggle"
           aria-label="Toggle menu"
           aria-expanded={mobileMenuOpen}
+          type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           ☰
         </button>
-        <div className={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
-          <a href="#features" onClick={() => setMobileMenuOpen(false)}>Features</a>
-          <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>How It Works</a>
-          <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
-          <a href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
-          <Link to="/privacy" onClick={() => setMobileMenuOpen(false)}>Privacy</Link>
-          <Link to="/terms" onClick={() => setMobileMenuOpen(false)}>Terms</Link>
+        <div className={`nav-links ${mobileMenuOpen ? 'open' : ''}`} aria-hidden={!mobileMenuOpen}>
+          <a href="#features" onClick={() => setMobileMenuOpen(false)} tabIndex={mobileMenuOpen ? 0 : -1}>Features</a>
+          <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} tabIndex={mobileMenuOpen ? 0 : -1}>How It Works</a>
+          <a href="#pricing" onClick={() => setMobileMenuOpen(false)} tabIndex={mobileMenuOpen ? 0 : -1}>Pricing</a>
+          <a href="#faq" onClick={() => setMobileMenuOpen(false)} tabIndex={mobileMenuOpen ? 0 : -1}>FAQ</a>
+          <Link to="/privacy" onClick={() => setMobileMenuOpen(false)} tabIndex={mobileMenuOpen ? 0 : -1}>Privacy</Link>
+          <Link to="/terms" onClick={() => setMobileMenuOpen(false)} tabIndex={mobileMenuOpen ? 0 : -1}>Terms</Link>
         </div>
       </nav>
 
@@ -44,7 +46,7 @@ function App() {
 
       {/* Hero Section */}
       <header className="hero" role="banner">
-        <div className="hero-badge">✨ Now Available on the App Store</div>
+        <div className="hero-badge">{APP_STORE_LIVE ? '✨ Now Available on the App Store' : 'Coming soon to the App Store'}</div>
         <h1 className="hero-title">
           <span className="hero-emoji" aria-hidden="true">🧘</span>
           <br />
@@ -59,15 +61,15 @@ function App() {
         <div className="hero-buttons">
           <a
             className="app-store-button"
-            href="https://apps.apple.com/app/zenzone"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download ZenZone on the App Store"
+            href={STORE_CTA_URL}
+            target={APP_STORE_LIVE ? '_blank' : undefined}
+            rel={APP_STORE_LIVE ? 'noopener noreferrer' : undefined}
+            aria-label={APP_STORE_LIVE ? 'Download ZenZone on the App Store' : 'Join the ZenZone waitlist'}
           >
             <svg className="app-store-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.5 1.3-.02 2.52.87 3.31.87.79 0 2.27-1.08 3.83-.92.65.03 2.48.26 3.65 1.98-.09.06-2.18 1.28-2.16 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.22-1.97 1.08-3.11-1.05.05-2.31.7-3.06 1.53-.67.74-1.26 1.93-1.1 3.1 1.17.09 2.36-.66 3.08-1.52z"/>
             </svg>
-            Download on the App Store
+            {APP_STORE_LIVE ? 'Download on the App Store' : 'Join the waitlist'}
           </a>
         </div>
       </header>
@@ -179,12 +181,12 @@ function App() {
             </ul>
             <a
               className="pricing-cta"
-              href="https://apps.apple.com/app/zenzone"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Download ZenZone Free on the App Store"
+              href={STORE_CTA_URL}
+              target={APP_STORE_LIVE ? '_blank' : undefined}
+              rel={APP_STORE_LIVE ? 'noopener noreferrer' : undefined}
+              aria-label={APP_STORE_LIVE ? 'Download ZenZone Free on the App Store' : 'Join the ZenZone waitlist for the free tier'}
             >
-              Download Free
+              {APP_STORE_LIVE ? 'Download Free' : 'Join the waitlist'}
             </a>
           </div>
           <div className="pricing-card pricing-highlight">
@@ -200,12 +202,12 @@ function App() {
             </ul>
             <a
               className="pricing-cta pricing-cta-primary"
-              href="https://apps.apple.com/app/zenzone"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Download ZenZone Premium on the App Store"
+              href={STORE_CTA_URL}
+              target={APP_STORE_LIVE ? '_blank' : undefined}
+              rel={APP_STORE_LIVE ? 'noopener noreferrer' : undefined}
+              aria-label={APP_STORE_LIVE ? 'Download ZenZone Premium on the App Store' : 'Join the ZenZone waitlist for Premium'}
             >
-              Go Premium
+              {APP_STORE_LIVE ? 'Go Premium' : 'Join the waitlist'}
             </a>
           </div>
         </div>
@@ -254,7 +256,7 @@ function App() {
             <a href="#faq">FAQ</a>
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Use</Link>
-            <a href="mailto:Harveymackie@outlook.com">Contact</a>
+            <a href="mailto:support@zenzone.app">Contact</a>
           </div>
           <div className="footer-social" aria-label="Social links">
             <a href="https://twitter.com/zenzoneapp" target="_blank" rel="noopener noreferrer" aria-label="Twitter">𝕏</a>
