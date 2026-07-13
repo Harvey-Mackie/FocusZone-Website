@@ -912,3 +912,8 @@ summary:focus-visible,
     visibility: visible;
   }
 }
+
+.waitlist-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
