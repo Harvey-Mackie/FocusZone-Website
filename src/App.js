@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
 import AppImage1 from './images/appimage1.jpg';
+import AppImage1_2x from './images/appimage1@2x.jpg';
 import AppImage2 from './images/appimage2.jpg';
+import AppImage2_2x from './images/appimage2@2x.jpg';
 import AppImage3 from './images/appimage3.jpg';
+import AppImage3_2x from './images/appimage3@2x.jpg';
 import { Link } from 'react-router-dom';
 import BrandLogo from './BrandLogo';
 import { APP_STORE_LIVE, STORE_CTA_URL, WAITLIST_PATH } from './config';
@@ -134,9 +137,9 @@ function App() {
       <section className="screenshots" aria-labelledby="screenshots-heading">
         <h2 id="screenshots-heading">See ZenZone in Action</h2>
         <div className="screenshots-grid">
-          <img src={AppImage1} alt="ZenZone app screenshot showing the main dashboard with screen time metrics" loading="lazy" />
-          <img src={AppImage2} alt="ZenZone app screenshot showing routine scheduling and app blocking settings" loading="lazy" />
-          <img src={AppImage3} alt="ZenZone app screenshot showing deep work session timer and progress" loading="lazy" />
+          <img src={AppImage1} srcSet={`${AppImage1} 1x, ${AppImage1_2x} 2x`} alt="ZenZone app screenshot showing the main dashboard with screen time metrics" loading="lazy" />
+          <img src={AppImage2} srcSet={`${AppImage2} 1x, ${AppImage2_2x} 2x`} alt="ZenZone app screenshot showing routine scheduling and app blocking settings" loading="lazy" />
+          <img src={AppImage3} srcSet={`${AppImage3} 1x, ${AppImage3_2x} 2x`} alt="ZenZone app screenshot showing deep work session timer and progress" loading="lazy" />
         </div>
       </section>
 
