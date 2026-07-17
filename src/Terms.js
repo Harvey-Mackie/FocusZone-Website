@@ -1,11 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import BrandLogo from './BrandLogo';
 
 function Terms() {
   return (
     <div className="app">
-      <header>
-        <h1>🧘</h1>
-        <h1>ZenZone — Terms of Use</h1>
+      <header className="legal-header" role="banner">
+        <Link to="/" className="legal-back-link" aria-label="Back to ZenZone home">
+          <BrandLogo />
+          <span>ZenZone</span>
+        </Link>
+      </header>
+
+      <main className="legal-content">
+        <h1>🧘 ZenZone — Terms of Use</h1>
         <h2 className="tagline">Your focus, your data, your control</h2>
         <p><strong>Last updated:</strong> June 21, 2026</p>
 
@@ -55,7 +63,7 @@ function Terms() {
 
         <h2>12. Contact Us</h2>
         <p>If you have any questions about these Terms, please contact us at <a href="mailto:support@zenzone.app">support@zenzone.app</a>.</p>
-      </header>
+      </main>
 
       <footer className="privacy-footer">
         <a className="contact-button" href="mailto:support@zenzone.app">Contact Us</a>

@@ -1,11 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import BrandLogo from './BrandLogo';
 
 function Privacy() {
   return (
     <div className="app">
-      <header>
-        <h1>🧘</h1>
-        <h1>ZenZone — Privacy Policy</h1>
+      <header className="legal-header" role="banner">
+        <Link to="/" className="legal-back-link" aria-label="Back to ZenZone home">
+          <BrandLogo />
+          <span>ZenZone</span>
+        </Link>
+      </header>
+
+      <main className="legal-content">
+        <h1>🧘 ZenZone — Privacy Policy</h1>
         <h2 className="tagline">Your focus, your data, your control</h2>
         <p>Thank you for using <strong>ZenZone</strong>. Your privacy is important to us. This Privacy Policy explains how we handle your data and your rights regarding it.</p>
 
@@ -29,7 +37,7 @@ function Privacy() {
 
         <h2>Changes to This Privacy Policy</h2>
         <p>We may update this Privacy Policy to reflect changes in the app or legal requirements. Any updates will be made available within the app or on our website, along with the effective date of the changes.</p>
-      </header>
+      </main>
 
       <footer className="privacy-footer">
         <a className="contact-button" href="mailto:support@zenzone.app">Contact Us</a>
