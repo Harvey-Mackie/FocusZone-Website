@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/FocusZone-Website/static/css/main.576d8643.css",
+    "main.js": "/FocusZone-Website/static/js/main.9b5ce544.js",
+    "static/js/453.576be6d2.chunk.js": "/FocusZone-Website/static/js/453.576be6d2.chunk.js",
+    "static/media/appimage1.jpg": "/FocusZone-Website/static/media/appimage1.6d603c1df2dc58612651.jpg",
+    "static/media/appimage3.jpg": "/FocusZone-Website/static/media/appimage3.230766457b7aeab62b81.jpg",
+    "static/media/appimage1@2x.jpg": "/FocusZone-Website/static/media/appimage1@2x.b801eb7f69de601eb6e2.jpg",
+    "static/media/appimage3@2x.jpg": "/FocusZone-Website/static/media/appimage3@2x.56b23bb7764adb36f360.jpg",
+    "static/media/appimage2.jpg": "/FocusZone-Website/static/media/appimage2.455360f4d2c7bc28631b.jpg",
+    "static/media/appimage2@2x.jpg": "/FocusZone-Website/static/media/appimage2@2x.3b70cc04cd2219af5f5f.jpg",
+    "index.html": "/FocusZone-Website/index.html",
+    "main.576d8643.css.map": "/FocusZone-Website/static/css/main.576d8643.css.map",
+    "main.9b5ce544.js.map": "/FocusZone-Website/static/js/main.9b5ce544.js.map",
+    "453.576be6d2.chunk.js.map": "/FocusZone-Website/static/js/453.576be6d2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.576d8643.css",
+    "static/js/main.9b5ce544.js"
+  ]
+}
