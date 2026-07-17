@@ -654,6 +654,13 @@ body {
   color: var(--color-accent);
 }
 
+.footer-contact-email {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  user-select: all;
+  -webkit-user-select: all;
+}
+
 .footer-social {
   display: flex;
   gap: var(--space-sm);

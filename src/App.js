@@ -5,7 +5,7 @@ import AppImage2 from './images/appimage2.jpg';
 import AppImage3 from './images/appimage3.jpg';
 import { Link } from 'react-router-dom';
 import BrandLogo from './BrandLogo';
-import { APP_STORE_LIVE, STORE_CTA_URL, WAITLIST_PATH } from './config';
+import { APP_STORE_LIVE, STORE_CTA_URL, WAITLIST_PATH, CONTACT_EMAIL } from './config';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -294,7 +294,8 @@ function App() {
             <a href="#faq">FAQ</a>
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Use</Link>
-            <a href="mailto:support@zenzone.app">Contact</a>
+            <a href={`mailto:${CONTACT_EMAIL}`}>Contact</a>
+            <span className="footer-contact-email">{CONTACT_EMAIL}</span>
           </div>
           <div className="footer-social" aria-label="Social links">
             <a href="https://twitter.com/zenzoneapp" target="_blank" rel="noopener noreferrer" aria-label="Twitter">𝕏</a>
