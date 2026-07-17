@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Link } from 'react-router-dom';
+import BrandLogo from './BrandLogo';
 import { CONTACT_EMAIL, FORM_ENDPOINT } from './config';
 
 const isFormConfigured = (endpoint) =>
@@ -54,7 +55,7 @@ function Waitlist() {
 
     const copied = await copyToClipboard(trimmed);
     const mailto = `mailto:${CONTACT_EMAIL}?subject=ZenZone%20Waitlist&body=${encodeURIComponent(
-      `Hi ZenZone team,\n\nPlease add me to the ZenZone waitlist.\n\nEmail: ${trimmed}\n\nThanks!`
+      `Hi ZenZone team,\\n\\nPlease add me to the ZenZone waitlist.\\n\\nEmail: ${trimmed}\\n\\nThanks!`
     )}`;
 
     setLoading(false);
@@ -72,7 +73,7 @@ function Waitlist() {
     <div className="app">
       <nav className="navbar" aria-label="Main navigation">
         <div className="nav-brand">
-          <span className="nav-logo" aria-hidden="true">🧘</span>
+          <BrandLogo />
           <Link to="/" className="nav-title">ZenZone</Link>
         </div>
       </nav>
