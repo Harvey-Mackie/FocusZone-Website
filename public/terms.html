@@ -9,9 +9,24 @@
         h1 { color: #2c3e50; }
         h2 { color: #34495e; margin-top: 2rem; }
         a { color: #3498db; }
+        .legal-header { display: flex; align-items: center; justify-content: flex-start; padding: 0 0 1rem 0; margin-bottom: 1.5rem; border-bottom: 1px solid #e5e7eb; }
+        .legal-back-link { display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-weight: 600; color: #2c3e50; font-size: 1.1rem; }
+        .legal-back-link:hover, .legal-back-link:focus { color: #3498db; }
+        .legal-back-link svg { width: 1.5rem; height: 1.5rem; color: #38bdf8; }
+        @media print { .legal-header { display: none; } }
     </style>
 </head>
 <body>
+    <header class="legal-header" role="banner">
+        <a href="/" class="legal-back-link" aria-label="Back to ZenZone home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+            </svg>
+            <span>ZenZone</span>
+        </a>
+    </header>
+
     <h1>Terms of Use</h1>
     <p><strong>Last updated:</strong> June 21, 2026</p>
 
