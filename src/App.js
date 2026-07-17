@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import './App.css';
 import AppImage1 from './images/appimage1.jpg';
+import AppImage1_2x from './images/appimage1@2x.jpg';
 import AppImage2 from './images/appimage2.jpg';
+import AppImage2_2x from './images/appimage2@2x.jpg';
 import AppImage3 from './images/appimage3.jpg';
+import AppImage3_2x from './images/appimage3@2x.jpg';
 import { Link } from 'react-router-dom';
-import { APP_STORE_LIVE, STORE_CTA_URL } from './config';
+import BrandLogo from './BrandLogo';
+import { APP_STORE_LIVE, STORE_CTA_URL, WAITLIST_PATH } from './config';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,17 +23,21 @@ function App() {
       {/* Navigation */}
       <nav className="navbar" aria-label="Main navigation">
         <div className="nav-brand">
-          <span className="nav-logo" aria-hidden="true">🧘</span>
+          <BrandLogo />
           <span className="nav-title">ZenZone</span>
         </div>
         <button
-          className="mobile-menu-toggle"
-          aria-label="Toggle menu"
+          className={`mobile-menu-toggle ${mobileMenuOpen ? 'open' : ''}`}
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileMenuOpen}
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          ☰
+          <span className="menu-icon" aria-hidden="true">
+            <span className="menu-bar" />
+            <span className="menu-bar" />
+            <span className="menu-bar" />
+          </span>
         </button>
         <div className={`nav-links ${mobileMenuOpen ? 'open' : ''}`} aria-hidden={!mobileMenuOpen}>
           <a href="#features" onClick={() => setMobileMenuOpen(false)} tabIndex={mobileMenuOpen ? 0 : -1}>Features</a>
@@ -48,7 +56,7 @@ function App() {
       <header className="hero" role="banner">
         <div className="hero-badge">{APP_STORE_LIVE ? '✨ Now Available on the App Store' : 'Coming soon to the App Store'}</div>
         <h1 className="hero-title">
-          <span className="hero-emoji" aria-hidden="true">🧘</span>
+          <BrandLogo />
           <br />
           Find Focus with ZenZone
         </h1>
@@ -59,18 +67,31 @@ function App() {
           management, and personalized insights.
         </p>
         <div className="hero-buttons">
-          <a
-            className="app-store-button"
-            href={STORE_CTA_URL}
-            target={APP_STORE_LIVE ? '_blank' : undefined}
-            rel={APP_STORE_LIVE ? 'noopener noreferrer' : undefined}
-            aria-label={APP_STORE_LIVE ? 'Download ZenZone on the App Store' : 'Join the ZenZone waitlist'}
-          >
-            <svg className="app-store-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.5 1.3-.02 2.52.87 3.31.87.79 0 2.27-1.08 3.83-.92.65.03 2.48.26 3.65 1.98-.09.06-2.18 1.28-2.16 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.22-1.97 1.08-3.11-1.05.05-2.31.7-3.06 1.53-.67.74-1.26 1.93-1.1 3.1 1.17.09 2.36-.66 3.08-1.52z"/>
-            </svg>
-            {APP_STORE_LIVE ? 'Download on the App Store' : 'Join the waitlist'}
-          </a>
+          {APP_STORE_LIVE ? (
+            <a
+              className="app-store-button"
+              href={STORE_CTA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download ZenZone on the App Store"
+            >
+              <svg className="app-store-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.5 1.3-.02 2.52.87 3.31.87.79 0 2.27-1.08 3.83-.92.65.03 2.48.26 3.65 1.98-.09.06-2.18 1.28-2.16 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.22-1.97 1.08-3.11-1.05.05-2.31.7-3.06 1.53-.67.74-1.26 1.93-1.1 3.1 1.17.09 2.36-.66 3.08-1.52z"/>
+              </svg>
+              Download on the App Store
+            </a>
+          ) : (
+            <Link
+              className="app-store-button"
+              to={WAITLIST_PATH}
+              aria-label="Join the ZenZone waitlist"
+            >
+              <svg className="app-store-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.5 1.3-.02 2.52.87 3.31.87.79 0 2.27-1.08 3.83-.92.65.03 2.48.26 3.65 1.98-.09.06-2.18 1.28-2.16 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.22-1.97 1.08-3.11-1.05.05-2.31.7-3.06 1.53-.67.74-1.26 1.93-1.1 3.1 1.17.09 2.36-.66 3.08-1.52z"/>
+              </svg>
+              Join the waitlist
+            </Link>
+          )}
         </div>
       </header>
 
@@ -116,9 +137,9 @@ function App() {
       <section className="screenshots" aria-labelledby="screenshots-heading">
         <h2 id="screenshots-heading">See ZenZone in Action</h2>
         <div className="screenshots-grid">
-          <img src={AppImage1} alt="ZenZone app screenshot showing the main dashboard with screen time metrics" loading="lazy" />
-          <img src={AppImage2} alt="ZenZone app screenshot showing routine scheduling and app blocking settings" loading="lazy" />
-          <img src={AppImage3} alt="ZenZone app screenshot showing deep work session timer and progress" loading="lazy" />
+          <img src={AppImage1} srcSet={`${AppImage1} 1x, ${AppImage1_2x} 2x`} alt="ZenZone app screenshot showing the main dashboard with screen time metrics" loading="lazy" />
+          <img src={AppImage2} srcSet={`${AppImage2} 1x, ${AppImage2_2x} 2x`} alt="ZenZone app screenshot showing routine scheduling and app blocking settings" loading="lazy" />
+          <img src={AppImage3} srcSet={`${AppImage3} 1x, ${AppImage3_2x} 2x`} alt="ZenZone app screenshot showing deep work session timer and progress" loading="lazy" />
         </div>
       </section>
 
@@ -179,15 +200,25 @@ function App() {
               <li>Basic app blocking</li>
               <li>Daily insights</li>
             </ul>
-            <a
-              className="pricing-cta"
-              href={STORE_CTA_URL}
-              target={APP_STORE_LIVE ? '_blank' : undefined}
-              rel={APP_STORE_LIVE ? 'noopener noreferrer' : undefined}
-              aria-label={APP_STORE_LIVE ? 'Download ZenZone Free on the App Store' : 'Join the ZenZone waitlist for the free tier'}
-            >
-              {APP_STORE_LIVE ? 'Download Free' : 'Join the waitlist'}
-            </a>
+            {APP_STORE_LIVE ? (
+              <a
+                className="pricing-cta"
+                href={STORE_CTA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download ZenZone Free on the App Store"
+              >
+                Download Free
+              </a>
+            ) : (
+              <Link
+                className="pricing-cta"
+                to={WAITLIST_PATH}
+                aria-label="Join the ZenZone waitlist for the free tier"
+              >
+                Join the waitlist
+              </Link>
+            )}
           </div>
           <div className="pricing-card pricing-highlight">
             <div className="pricing-badge">Most Popular</div>
@@ -200,15 +231,25 @@ function App() {
               <li>Custom break reminders</li>
               <li>Priority support</li>
             </ul>
-            <a
-              className="pricing-cta pricing-cta-primary"
-              href={STORE_CTA_URL}
-              target={APP_STORE_LIVE ? '_blank' : undefined}
-              rel={APP_STORE_LIVE ? 'noopener noreferrer' : undefined}
-              aria-label={APP_STORE_LIVE ? 'Download ZenZone Premium on the App Store' : 'Join the ZenZone waitlist for Premium'}
-            >
-              {APP_STORE_LIVE ? 'Go Premium' : 'Join the waitlist'}
-            </a>
+            {APP_STORE_LIVE ? (
+              <a
+                className="pricing-cta pricing-cta-primary"
+                href={STORE_CTA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download ZenZone Premium on the App Store"
+              >
+                Go Premium
+              </a>
+            ) : (
+              <Link
+                className="pricing-cta pricing-cta-primary"
+                to={WAITLIST_PATH}
+                aria-label="Join the ZenZone waitlist for Premium"
+              >
+                Join the waitlist
+              </Link>
+            )}
           </div>
         </div>
       </section>
@@ -246,7 +287,7 @@ function App() {
       <footer className="site-footer">
         <div className="footer-top">
           <div className="footer-brand">
-            <span className="footer-logo" aria-hidden="true">🧘</span>
+            <BrandLogo />
             <span>ZenZone</span>
           </div>
           <div className="footer-links">
