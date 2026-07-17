@@ -4,6 +4,7 @@ import AppImage1 from './images/appimage1.jpg';
 import AppImage2 from './images/appimage2.jpg';
 import AppImage3 from './images/appimage3.jpg';
 import { Link } from 'react-router-dom';
+import BrandLogo from './BrandLogo';
 import { APP_STORE_LIVE, STORE_CTA_URL, WAITLIST_PATH } from './config';
 
 function App() {
@@ -19,17 +20,21 @@ function App() {
       {/* Navigation */}
       <nav className="navbar" aria-label="Main navigation">
         <div className="nav-brand">
-          <span className="nav-logo" aria-hidden="true">🧘</span>
+          <BrandLogo />
           <span className="nav-title">ZenZone</span>
         </div>
         <button
-          className="mobile-menu-toggle"
-          aria-label="Toggle menu"
+          className={`mobile-menu-toggle ${mobileMenuOpen ? 'open' : ''}`}
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileMenuOpen}
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          ☰
+          <span className="menu-icon" aria-hidden="true">
+            <span className="menu-bar" />
+            <span className="menu-bar" />
+            <span className="menu-bar" />
+          </span>
         </button>
         <div className={`nav-links ${mobileMenuOpen ? 'open' : ''}`} aria-hidden={!mobileMenuOpen}>
           <a href="#features" onClick={() => setMobileMenuOpen(false)} tabIndex={mobileMenuOpen ? 0 : -1}>Features</a>
@@ -48,7 +53,7 @@ function App() {
       <header className="hero" role="banner">
         <div className="hero-badge">{APP_STORE_LIVE ? '✨ Now Available on the App Store' : 'Coming soon to the App Store'}</div>
         <h1 className="hero-title">
-          <span className="hero-emoji" aria-hidden="true">🧘</span>
+          <BrandLogo />
           <br />
           Find Focus with ZenZone
         </h1>
@@ -279,7 +284,7 @@ function App() {
       <footer className="site-footer">
         <div className="footer-top">
           <div className="footer-brand">
-            <span className="footer-logo" aria-hidden="true">🧘</span>
+            <BrandLogo />
             <span>ZenZone</span>
           </div>
           <div className="footer-links">
